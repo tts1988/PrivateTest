@@ -40,6 +40,7 @@
 		4F6565DD1F31B3C900EB6797 /* map.html in Resources */ = {isa = PBXBuildFile; fileRef = 4F6565CC1F31B3C900EB6797 /* map.html */; };
 		4F6565DE1F31B3C900EB6797 /* map.js in Resources */ = {isa = PBXBuildFile; fileRef = 4F6565CD1F31B3C900EB6797 /* map.js */; };
 		4F7B13F01F2983C6007836EE /* WaterWaveProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7B13EF1F2983C6007836EE /* WaterWaveProgressView.m */; };
+		4F7DB7291F3FF7EA00507498 /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7DB7281F3FF7EA00507498 /* Animal.m */; };
 		4FC3955B1EA791270027A839 /* LinkLabelImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC3955A1EA791270027A839 /* LinkLabelImageGenerator.m */; };
 		4FDFCB101E84B59A00A6C102 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFCB0F1E84B59A00A6C102 /* main.m */; };
 		4FDFCB131E84B59A00A6C102 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFCB121E84B59A00A6C102 /* AppDelegate.m */; };
@@ -113,6 +114,8 @@
 		4F6565CD1F31B3C900EB6797 /* map.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = map.js; sourceTree = "<group>"; };
 		4F7B13EE1F2983C6007836EE /* WaterWaveProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterWaveProgressView.h; sourceTree = "<group>"; };
 		4F7B13EF1F2983C6007836EE /* WaterWaveProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterWaveProgressView.m; sourceTree = "<group>"; };
+		4F7DB7271F3FF7EA00507498 /* Animal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
+		4F7DB7281F3FF7EA00507498 /* Animal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
 		4FC395591EA791270027A839 /* LinkLabelImageGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkLabelImageGenerator.h; sourceTree = "<group>"; };
 		4FC3955A1EA791270027A839 /* LinkLabelImageGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkLabelImageGenerator.m; sourceTree = "<group>"; };
 		4FDFCB0B1E84B59A00A6C102 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,6 +265,15 @@
 			path = WaterWaveProgressView;
 			sourceTree = "<group>";
 		};
+		4F7DB7261F3FF7C700507498 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				4F7DB7271F3FF7EA00507498 /* Animal.h */,
+				4F7DB7281F3FF7EA00507498 /* Animal.m */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
 		4FDFCB021E84B59A00A6C102 = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +294,7 @@
 		4FDFCB0D1E84B59A00A6C102 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				4F7DB7261F3FF7C700507498 /* File */,
 				4F6565B91F31B3C900EB6797 /* GoogleMap */,
 				4F7B13ED1F2981D2007836EE /* WaterWaveProgressView */,
 				4F4A4ED11F261F430042CA5F /* ThirdParty */,
@@ -434,6 +447,7 @@
 				4F6539841F346BFA00414774 /* ClassEnum.m in Sources */,
 				4F51FCA61E9B2FBE009808DF /* AFNetworkReachabilityManager.m in Sources */,
 				4FDFCB101E84B59A00A6C102 /* main.m in Sources */,
+				4F7DB7291F3FF7EA00507498 /* Animal.m in Sources */,
 				4F51FCA81E9B2FBE009808DF /* AFURLRequestSerialization.m in Sources */,
 				4FC3955B1EA791270027A839 /* LinkLabelImageGenerator.m in Sources */,
 			);
