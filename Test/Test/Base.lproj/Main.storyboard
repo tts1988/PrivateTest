@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="-650" y="-179"/>
         </scene>
-        <!--Google Map Controller-->
+        <!--地图-->
         <scene sceneID="vgb-Lw-Mqo">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="WoM-km-9Bi" customClass="GoogleMapController" sceneMemberID="viewController">
@@ -52,7 +52,7 @@
                             <constraint firstAttribute="trailing" secondItem="fNJ-zi-OHh" secondAttribute="trailing" id="nyx-NC-Luy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gr7-w1-rYa"/>
+                    <navigationItem key="navigationItem" title="地图" id="gr7-w1-rYa"/>
                     <connections>
                         <outlet property="web" destination="fNJ-zi-OHh" id="wlc-bj-kfM"/>
                     </connections>

@@ -1,8 +1,8 @@
 /* Optional: Makes the sample page fill the window. */
 html, body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
 }
 
@@ -38,6 +38,15 @@ html, body {
 }
 
 #listplace {
-	overflow: scroll;
-	-webkit-overflow-scrolling: touch;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.ui-corner-all {
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+}
+
+.gm-style-mtc {
+    visibility: hidden;
 }

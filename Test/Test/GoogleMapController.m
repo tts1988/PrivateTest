@@ -7,6 +7,8 @@
 //
 
 #import "GoogleMapController.h"
+#import <CoreLocation/CoreLocation.h>
+#import "LocationTransformer.h"
 
 @interface GoogleMapController ()<UIWebViewDelegate>
 
@@ -26,20 +28,18 @@
     
     self.web.scrollView.scrollEnabled=NO;
     
-    NSString *path=[[NSBundle mainBundle] bundlePath];
-    
-    NSURL *baseUrl=[NSURL fileURLWithPath:path];
-    
     NSString *htmlPath=[[NSBundle mainBundle] pathForResource:@"map" ofType:@"html"];
     
-    NSString *htmlString=[[NSString alloc]initWithContentsOfFile:htmlPath encoding:NSUTF8StringEncoding error:nil];
+
+    NSURL *url=[NSURL fileURLWithPath:htmlPath];
     
-    //[self.web loadHTMLString:htmlString baseURL:baseUrl];
+    CLLocationCoordinate2D location=CLLocationCoordinate2DMake(30.4886480000, 114.4179640000);
     
+    location=[LocationTransformer transformLocation:location fromType:LocationTypeBD_09 toType:LocationTypeGCJ_02];
     
-    NSURL *url=[NSURL URLWithString:htmlPath];
+    NSString *para=[NSString stringWithFormat:@"?lat=%f&lon=%f",location.latitude,location.longitude];
     
-    url=[NSURL URLWithString:@"" relativeToURL:url];
+    url=[NSURL URLWithString:para relativeToURL:url];
     
     [self.web loadRequest:[NSURLRequest requestWithURL:url]];
     
@@ -58,13 +58,7 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
 
-    CGFloat height = [[webView stringByEvaluatingJavaScriptFromString:@"document.body.offsetHeight"] floatValue];
-    CGRect frame = webView.frame;
-    
-    webView.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, height);
-    
-    webView.scrollView.contentSize = CGSizeMake(frame.size.width, webView.frame.size.height);
-
+  
 }
 
 

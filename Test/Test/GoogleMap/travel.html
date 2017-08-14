@@ -1,0 +1,313 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>GoogleMap : 路线</title>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <style>
+            /* Always set the map height explicitly to define the size of the div
+            * element that contains the map. */
+            #header {
+                height: 2.2em;
+                padding: 0 0 1em 0;
+                z-index:1;
+                background-color: #fff;
+            }
+
+            #backdiv, #submitdiv, #img_back, #img_submit {
+                height: 100%;
+            }
+
+             #searchdiv {
+                height: 3.2em;
+                text-align: center;
+                vertical-align: middle;
+                line-height: 3.2em;
+            }
+
+            #backdiv, #submitdiv {
+                margin: 0.5em;
+            }
+
+            #pagecontainer {
+                width: 100%;
+                height: 20vh;
+                position: absolute;
+                bottom:3vw;
+                z-index: 1;
+                background-color: transparent;
+            }
+
+            /* vue */
+            .my-swipe {
+              height: 200px;
+              color: #fff;
+            }
+
+            .posaddr {
+                float:left;
+                overflow: hidden;
+                white-space: nowrap;
+                display: inline-block;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-size: 12px;
+            }
+
+            .calcway {
+                display: block;
+                margin: auto 0;
+                width: 24px;
+                height: 24px;
+            }
+
+            .dist {
+                float: right;
+                background-color: #378BeB;
+                color: #fff;
+                border-radius: 8px;
+                padding: 0.4em 0.6em;
+                font-size: 10px;
+            }
+
+            /*.posaddr, .calcway, .dist {
+                display: table-cell;
+                text-align:center;
+                vertical-align:middle;
+                margin : auto 0;
+            }*/
+
+            .swipetop, .swipebottom {
+                width:100%;
+                height: 50%;
+                display: table;
+            }
+
+            .swipe-content {
+              background-color: #ffffff;
+              color: #000;
+
+                margin: 0vh 3vw;
+                height: 100%;
+                padding: 0em 1.6em;
+            }
+
+        </style>
+    <link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css">
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+    <script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="vue/vue-swipe.css">
+    <script src="vue/vue.js"></script>
+    <script src="vue/vue-swipe.js"></script>
+    <link rel="stylesheet" href="map.css">
+    <script src="map.js"></script>
+</head>
+<body>
+    <div id="header" data-role="header">
+        <div id="backdiv" style="float: left;"><img src='btn_back.png' id="img_back"></div>
+        <div id="searchdiv">行程路线</div>
+    </div>
+
+    <div id="map"></div>
+
+    <div id="pagecontainer">
+        <swipe class="my-swipe" :auto="0" :show-indicators="false" v-on:index-change="indexChange">
+        </swipe>
+    </div>
+
+
+    <script type="text/javascript">
+    var initSize = function() {
+        var halfEm = parseInt($("#backdiv").css("margin-top"));
+        var headheight = $("#header").height() + halfEm * 2;
+        $("#searchdiv").css("margin-left", headheight).css("margin-right", headheight);
+
+        var restHeight = $(window).height() - headheight;
+        $("#map").height(restHeight);
+    }
+
+    $(function() {
+        initSize();
+        $( window ).resize(initSize);
+    });
+
+    $("#backdiv").click(function() {
+        location.href = "vbox://vigourbox?action=close";
+    }) ;
+
+    const vueSwipe = VueSwipe.Swipe;
+    const vueSwipeItem = VueSwipe.SwipeItem;
+
+    var swipeEle;
+
+    </script>
+
+    <script type="text/javascript">
+        var map;
+        var marker;
+        var service;
+        var infoWindow;
+        var geocoder;
+        var path = [{lat: 39.903333, lng: 116.391667, addr: ""}];       // A list like {lat, lng, addr}
+        var startPos ;
+
+        $(function() {
+            var posStr = getParameterByName('pos');
+            if(!posStr) return;
+            var pos = posStr.split("|");
+            path = [];
+            for(var i=0;i<pos.length;i+=3) {
+                if(!pos[i] || !pos[i+1]) break;
+                if(pos[i] == '0.0' && pos[i+1]=='0.0') continue;
+                path[i/3] = {lat: parseFloat(pos[i]), lng : parseFloat(pos[i+1]), addr : pos[i+2]};
+            }
+            if(path.length == 0) {   // no data split by |
+                path = [{lat: 39.903333, lng: 116.391667, addr: ""}];
+            }
+
+            getLatLng(function(pos) {
+             	startPos = pos;
+                usrLocaleState = 1;
+                initDistance(pos);
+            });
+        });
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: path[0],
+                zoom: 16
+            });
+
+            map.panTo(path[0]);
+            centerPos2(path[0], path[0].addr);
+            initDirection();
+
+            // Define a symbol using a predefined path (an arrow)
+            // supplied by the Google Maps JavaScript API.
+            var lineSymbol = {
+              path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
+            };
+
+            // Create the polyline and add the symbol via the 'icons' property.
+            var line = new google.maps.Polyline({
+              path: path,
+              icons: [{
+                icon: lineSymbol,
+                offset: '100%'
+              }],
+              map: map
+            });
+
+            for(var i=0;i<path.length;i++) {
+                var pos = path[i];
+                var marker = new google.maps.Marker({
+                  position: pos,
+                  icon: 'ico_location.png',
+                  map: map,
+                  idx : i
+                });
+
+                marker.addListener('click', function() {
+                  if(this.idx == swipeEle.index) return;
+                  map.panTo(this.position);
+                  centerPos2(this.position, this.position.addr);
+                  swipeEle.swipeTo(this.idx);
+                });
+            }
+
+            initDistance();
+      }
+
+    var origlocationError = locationError;
+    locationError = function(error, infoWindow, pos) {
+        usrLocaleState = 2;
+        initDistance();
+        return origlocationError(error, infoWindow, pos);
+    }
+
+      var getDistance = function(from, to) {
+          var dist = distance(from.lat, from.lng, to.lat, to.lng);
+          var res = dist > 1 ? dist.toFixed(1) + " km" : (dist*1000).toFixed(1) + " m";
+          return res;
+      }
+
+      var usrLocaleState = 0;
+      function initDistance(_pos) {
+          if(!_pos) _pos = startPos;
+
+          var content = '<swipe class="my-swipe" :auto="0" :show-indicators="false" v-on:index-change="indexChange">';
+          for(var i=0;i<path.length;i++) {
+              var pos = path[i];
+            content += ('<swipe-item><div class="swipe-content">' +
+                '<div class="swipetop">' +
+                    '<H3 class="posaddr">' + pos.addr + '</H3>' +
+                    '<div class="dist">' + (usrLocaleState != 1 ? 'Unknown' : getDistance(_pos, pos)) + '</div>' +
+                '</div>' +
+                '<div class="swipebottom"><img class="calcway" src="p.png" alt="' + pos.addr + '" onclick="wayTo(' + pos.lat + "," + pos.lng + ')"></div>' +
+                '</div></swipe-item>');
+        }
+        content += '</swipe>';
+        $("#pagecontainer").empty().append(content);
+
+        swipeEle = new Vue({
+              el: '#pagecontainer',
+              components: {
+                'swipe': vueSwipe,
+                'swipe-item': vueSwipeItem
+              },
+              methods: {
+                indexChange: function () {
+                  map.panTo(path[swipeEle.index]);
+                centerPos2(path[swipeEle.index], path[swipeEle.index].addr);
+                }
+              }
+            }).$children[0];
+
+
+
+        $(".posaddr").width($(".swipetop").width() - $('.dist').width() - parseFloat($('.dist').css('padding-left'))*2 - 10);
+
+        var posaddr_margin = ($(".swipebottom").height() - $(".posaddr").height()) / 2;
+        $('.posaddr').css("margin-top",  posaddr_margin).css("margin-bottom",  posaddr_margin);
+
+        $('.dist').css("margin-top", parseFloat($(".posaddr").css("margin-top")) - parseFloat($(".dist").css("padding-top")));
+
+        var calcway_margin = ($(".swipebottom").height() - $(".calcway").height()) / 2;
+        $('.calcway').css("margin-top",  calcway_margin / 2).css("margin-bottom",  calcway_margin / 2);
+      }
+
+      var directionsDisplay;
+      var directionsService;
+      function initDirection() {
+        directionsDisplay = new google.maps.DirectionsRenderer();
+        directionsService = new google.maps.DirectionsService();
+        directionsDisplay.setMap(map);
+      }
+
+      var wayTo = function(toLat, toLng) {
+          if(usrLocaleState != 1 || !startPos){
+              alert("User location unknown!");
+              return;
+          }
+
+        var request = {
+            origin: startPos,
+            destination: {lat: toLat, lng: toLng},
+            travelMode: 'DRIVING'
+        };
+        directionsService.route(request, function(result, status) {
+            if (status == 'OK') {
+                directionsDisplay.setDirections(result);
+            }
+        });
+      }
+
+
+    </script>
+
+    <script async defer
+        src="http://maps.google.cn/maps/api/js?key=AIzaSyCL4YJmuMHOJw9TzXZ3WKLVqUxk_0EbblU&libraries=drawing&callback=initMap">
+    </script>
+
+</body>
+</html>
