@@ -27,7 +27,7 @@
 		4F7B13F01F2983C6007836EE /* WaterWaveProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7B13EF1F2983C6007836EE /* WaterWaveProgressView.m */; };
 		4F7DB7291F3FF7EA00507498 /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7DB7281F3FF7EA00507498 /* Animal.m */; };
 		4F8515B81F53FB6B006E4911 /* PropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F8515B71F53FB6B006E4911 /* PropertyList.plist */; };
-		4F8515BA1F53FB84006E4911 /* BYGVigourBox.ipa in Resources */ = {isa = PBXBuildFile; fileRef = 4F8515B91F53FB84006E4911 /* BYGVigourBox.ipa */; };
+		4F8515BC1F5407A3006E4911 /* BYGVigourBox.ipa in Resources */ = {isa = PBXBuildFile; fileRef = 4F8515BB1F5407A3006E4911 /* BYGVigourBox.ipa */; };
 		4F85BE9A1F417EA70044C5E8 /* LocationTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F85BE991F417EA70044C5E8 /* LocationTransformer.m */; };
 		4FC3955B1EA791270027A839 /* LinkLabelImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC3955A1EA791270027A839 /* LinkLabelImageGenerator.m */; };
 		4FDFCB101E84B59A00A6C102 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFCB0F1E84B59A00A6C102 /* main.m */; };
@@ -91,7 +91,7 @@
 		4F7DB7271F3FF7EA00507498 /* Animal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
 		4F7DB7281F3FF7EA00507498 /* Animal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
 		4F8515B71F53FB6B006E4911 /* PropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PropertyList.plist; sourceTree = "<group>"; };
-		4F8515B91F53FB84006E4911 /* BYGVigourBox.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = BYGVigourBox.ipa; sourceTree = "<group>"; };
+		4F8515BB1F5407A3006E4911 /* BYGVigourBox.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = BYGVigourBox.ipa; sourceTree = "<group>"; };
 		4F85BE981F417EA70044C5E8 /* LocationTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTransformer.h; sourceTree = "<group>"; };
 		4F85BE991F417EA70044C5E8 /* LocationTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTransformer.m; sourceTree = "<group>"; };
 		4FC395591EA791270027A839 /* LinkLabelImageGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkLabelImageGenerator.h; sourceTree = "<group>"; };
@@ -253,7 +253,7 @@
 				4F6539851F346C1A00414774 /* PrefixHeader.pch */,
 				4FDFCB1C1E84B59A00A6C102 /* LaunchScreen.storyboard */,
 				4FDFCB1F1E84B59A00A6C102 /* Info.plist */,
-				4F8515B91F53FB84006E4911 /* BYGVigourBox.ipa */,
+				4F8515BB1F5407A3006E4911 /* BYGVigourBox.ipa */,
 				4F8515B71F53FB6B006E4911 /* PropertyList.plist */,
 				4F3AA9471EC16AF5003CFC02 /* ThirdFont.plist */,
 				4FDFCB0E1E84B59A00A6C102 /* Supporting Files */,
@@ -334,7 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FDFCB3B1E84EF3000A6C102 /* icon_22x29.png in Resources */,
-				4F8515BA1F53FB84006E4911 /* BYGVigourBox.ipa in Resources */,
+				4F8515BC1F5407A3006E4911 /* BYGVigourBox.ipa in Resources */,
 				4FDFCB1E1E84B59A00A6C102 /* LaunchScreen.storyboard in Resources */,
 				4FDFCB1B1E84B59A00A6C102 /* Assets.xcassets in Resources */,
 				4F0115F41EE3A46F00330302 /* CTCallIVRView.nib in Resources */,
