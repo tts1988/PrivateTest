@@ -17,13 +17,13 @@
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>com.fnst.smartwork</string>
+				<string>com.BYG.VigourBox</string>
 				<key>bundle-version</key>
 				<string>1.0</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-				<string>数据请求.ipa</string>
+				<string>BYGVigourBox.ipa</string>
 			</dict>
 		</dict>
 	</array>
