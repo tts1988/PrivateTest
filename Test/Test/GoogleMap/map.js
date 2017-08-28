@@ -55,7 +55,7 @@ var centerPos = function(pos , addr) {
     if(!marker) {
         marker = new google.maps.Marker({
           position: pos,
-          icon: 'location_marker.png',
+          icon: 'img/location_marker.png',
           map: map
         });
     }
@@ -72,7 +72,7 @@ var centerPos2 = function(pos , addr) {
     if(!marker) {
         marker = new google.maps.Marker({
           position: pos,
-          icon: 'location_marker.png',
+          icon: 'img/location_marker.png',
           map: map
         });
     }
@@ -108,7 +108,7 @@ function createMarker(place) {
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
         map: map,
-        icon: 'location_marker.png',
+        icon: 'img/location_marker.png',
         position: place.geometry.location
     });
 

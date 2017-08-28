@@ -22,28 +22,10 @@
 		4F51FCAA1E9B2FBE009808DF /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F51FCA41E9B2FBE009808DF /* AFURLSessionManager.m */; };
 		4F6539841F346BFA00414774 /* ClassEnum.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6539831F346BFA00414774 /* ClassEnum.m */; };
 		4F6565B81F31B2AD00EB6797 /* GoogleMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6565B71F31B2AD00EB6797 /* GoogleMapController.m */; };
+		4F6C754F1F42834400592836 /* GoogleMap in Resources */ = {isa = PBXBuildFile; fileRef = 4F6C754E1F42834400592836 /* GoogleMap */; };
+		4F6C75521F428D2800592836 /* URLParameterParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6C75511F428D2800592836 /* URLParameterParser.m */; };
 		4F7B13F01F2983C6007836EE /* WaterWaveProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7B13EF1F2983C6007836EE /* WaterWaveProgressView.m */; };
 		4F7DB7291F3FF7EA00507498 /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7DB7281F3FF7EA00507498 /* Animal.m */; };
-		4F85BE811F417A620044C5E8 /* bg_location_info.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F85BE6A1F417A620044C5E8 /* bg_location_info.png */; };
-		4F85BE821F417A620044C5E8 /* btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F85BE6B1F417A620044C5E8 /* btn_back.png */; };
-		4F85BE831F417A620044C5E8 /* btn_submit.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F85BE6C1F417A620044C5E8 /* btn_submit.png */; };
-		4F85BE841F417A620044C5E8 /* ico_location.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F85BE6D1F417A620044C5E8 /* ico_location.png */; };
-		4F85BE851F417A620044C5E8 /* location_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F85BE6E1F417A620044C5E8 /* location_marker.png */; };
-		4F85BE861F417A620044C5E8 /* p.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F85BE6F1F417A620044C5E8 /* p.png */; };
-		4F85BE871F417A620044C5E8 /* map.html in Resources */ = {isa = PBXBuildFile; fileRef = 4F85BE701F417A620044C5E8 /* map.html */; };
-		4F85BE881F417A620044C5E8 /* map.js in Resources */ = {isa = PBXBuildFile; fileRef = 4F85BE711F417A620044C5E8 /* map.js */; };
-		4F85BE891F417A620044C5E8 /* travel.html in Resources */ = {isa = PBXBuildFile; fileRef = 4F85BE721F417A620044C5E8 /* travel.html */; };
-		4F85BE8A1F417A620044C5E8 /* map.css in Resources */ = {isa = PBXBuildFile; fileRef = 4F85BE731F417A620044C5E8 /* map.css */; };
-		4F85BE8B1F417A620044C5E8 /* vue-swipe.css in Resources */ = {isa = PBXBuildFile; fileRef = 4F85BE751F417A620044C5E8 /* vue-swipe.css */; };
-		4F85BE8C1F417A620044C5E8 /* vue-swipe.js in Resources */ = {isa = PBXBuildFile; fileRef = 4F85BE761F417A620044C5E8 /* vue-swipe.js */; };
-		4F85BE8D1F417A620044C5E8 /* vue.js in Resources */ = {isa = PBXBuildFile; fileRef = 4F85BE771F417A620044C5E8 /* vue.js */; };
-		4F85BE8E1F417A620044C5E8 /* ajax-loader.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F85BE7A1F417A620044C5E8 /* ajax-loader.gif */; };
-		4F85BE8F1F417A620044C5E8 /* jquery-1.11.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 4F85BE7B1F417A620044C5E8 /* jquery-1.11.3.min.js */; };
-		4F85BE901F417A620044C5E8 /* jquery.mobile-1.4.5.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 4F85BE7C1F417A620044C5E8 /* jquery.mobile-1.4.5.min.css */; };
-		4F85BE911F417A620044C5E8 /* jquery.mobile-1.4.5.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 4F85BE7D1F417A620044C5E8 /* jquery.mobile-1.4.5.min.js */; };
-		4F85BE921F417A620044C5E8 /* jquery.mobile.custom.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 4F85BE7E1F417A620044C5E8 /* jquery.mobile.custom.min.js */; };
-		4F85BE931F417A620044C5E8 /* jquery.mobile.custom.structure.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 4F85BE7F1F417A620044C5E8 /* jquery.mobile.custom.structure.min.css */; };
-		4F85BE941F417A620044C5E8 /* jquery.mobile.custom.theme.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 4F85BE801F417A620044C5E8 /* jquery.mobile.custom.theme.min.css */; };
 		4F85BE9A1F417EA70044C5E8 /* LocationTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F85BE991F417EA70044C5E8 /* LocationTransformer.m */; };
 		4FC3955B1EA791270027A839 /* LinkLabelImageGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC3955A1EA791270027A839 /* LinkLabelImageGenerator.m */; };
 		4FDFCB101E84B59A00A6C102 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDFCB0F1E84B59A00A6C102 /* main.m */; };
@@ -99,30 +81,13 @@
 		4F6539851F346C1A00414774 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		4F6565B61F31B2AD00EB6797 /* GoogleMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMapController.h; sourceTree = "<group>"; };
 		4F6565B71F31B2AD00EB6797 /* GoogleMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleMapController.m; sourceTree = "<group>"; };
+		4F6C754E1F42834400592836 /* GoogleMap */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GoogleMap; sourceTree = "<group>"; };
+		4F6C75501F428D2800592836 /* URLParameterParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLParameterParser.h; sourceTree = "<group>"; };
+		4F6C75511F428D2800592836 /* URLParameterParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLParameterParser.m; sourceTree = "<group>"; };
 		4F7B13EE1F2983C6007836EE /* WaterWaveProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterWaveProgressView.h; sourceTree = "<group>"; };
 		4F7B13EF1F2983C6007836EE /* WaterWaveProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterWaveProgressView.m; sourceTree = "<group>"; };
 		4F7DB7271F3FF7EA00507498 /* Animal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
 		4F7DB7281F3FF7EA00507498 /* Animal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
-		4F85BE6A1F417A620044C5E8 /* bg_location_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_location_info.png; sourceTree = "<group>"; };
-		4F85BE6B1F417A620044C5E8 /* btn_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_back.png; sourceTree = "<group>"; };
-		4F85BE6C1F417A620044C5E8 /* btn_submit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_submit.png; sourceTree = "<group>"; };
-		4F85BE6D1F417A620044C5E8 /* ico_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_location.png; sourceTree = "<group>"; };
-		4F85BE6E1F417A620044C5E8 /* location_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_marker.png; sourceTree = "<group>"; };
-		4F85BE6F1F417A620044C5E8 /* p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p.png; sourceTree = "<group>"; };
-		4F85BE701F417A620044C5E8 /* map.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = map.html; sourceTree = "<group>"; };
-		4F85BE711F417A620044C5E8 /* map.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = map.js; sourceTree = "<group>"; };
-		4F85BE721F417A620044C5E8 /* travel.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = travel.html; sourceTree = "<group>"; };
-		4F85BE731F417A620044C5E8 /* map.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = map.css; sourceTree = "<group>"; };
-		4F85BE751F417A620044C5E8 /* vue-swipe.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "vue-swipe.css"; sourceTree = "<group>"; };
-		4F85BE761F417A620044C5E8 /* vue-swipe.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "vue-swipe.js"; sourceTree = "<group>"; };
-		4F85BE771F417A620044C5E8 /* vue.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vue.js; sourceTree = "<group>"; };
-		4F85BE7A1F417A620044C5E8 /* ajax-loader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ajax-loader.gif"; sourceTree = "<group>"; };
-		4F85BE7B1F417A620044C5E8 /* jquery-1.11.3.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.11.3.min.js"; sourceTree = "<group>"; };
-		4F85BE7C1F417A620044C5E8 /* jquery.mobile-1.4.5.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery.mobile-1.4.5.min.css"; sourceTree = "<group>"; };
-		4F85BE7D1F417A620044C5E8 /* jquery.mobile-1.4.5.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery.mobile-1.4.5.min.js"; sourceTree = "<group>"; };
-		4F85BE7E1F417A620044C5E8 /* jquery.mobile.custom.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.mobile.custom.min.js; sourceTree = "<group>"; };
-		4F85BE7F1F417A620044C5E8 /* jquery.mobile.custom.structure.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = jquery.mobile.custom.structure.min.css; sourceTree = "<group>"; };
-		4F85BE801F417A620044C5E8 /* jquery.mobile.custom.theme.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = jquery.mobile.custom.theme.min.css; sourceTree = "<group>"; };
 		4F85BE981F417EA70044C5E8 /* LocationTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTransformer.h; sourceTree = "<group>"; };
 		4F85BE991F417EA70044C5E8 /* LocationTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTransformer.m; sourceTree = "<group>"; };
 		4FC395591EA791270027A839 /* LinkLabelImageGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkLabelImageGenerator.h; sourceTree = "<group>"; };
@@ -235,65 +200,6 @@
 			path = File;
 			sourceTree = "<group>";
 		};
-		4F85BE381F4170EC0044C5E8 /* GoogleMap */ = {
-			isa = PBXGroup;
-			children = (
-				4F85BE691F417A620044C5E8 /* img */,
-				4F85BE701F417A620044C5E8 /* map.html */,
-				4F85BE711F417A620044C5E8 /* map.js */,
-				4F85BE721F417A620044C5E8 /* travel.html */,
-				4F85BE731F417A620044C5E8 /* map.css */,
-				4F85BE741F417A620044C5E8 /* vue */,
-				4F85BE781F417A620044C5E8 /* jquery */,
-			);
-			path = GoogleMap;
-			sourceTree = "<group>";
-		};
-		4F85BE691F417A620044C5E8 /* img */ = {
-			isa = PBXGroup;
-			children = (
-				4F85BE6A1F417A620044C5E8 /* bg_location_info.png */,
-				4F85BE6B1F417A620044C5E8 /* btn_back.png */,
-				4F85BE6C1F417A620044C5E8 /* btn_submit.png */,
-				4F85BE6D1F417A620044C5E8 /* ico_location.png */,
-				4F85BE6E1F417A620044C5E8 /* location_marker.png */,
-				4F85BE6F1F417A620044C5E8 /* p.png */,
-			);
-			path = img;
-			sourceTree = "<group>";
-		};
-		4F85BE741F417A620044C5E8 /* vue */ = {
-			isa = PBXGroup;
-			children = (
-				4F85BE751F417A620044C5E8 /* vue-swipe.css */,
-				4F85BE761F417A620044C5E8 /* vue-swipe.js */,
-				4F85BE771F417A620044C5E8 /* vue.js */,
-			);
-			path = vue;
-			sourceTree = "<group>";
-		};
-		4F85BE781F417A620044C5E8 /* jquery */ = {
-			isa = PBXGroup;
-			children = (
-				4F85BE791F417A620044C5E8 /* images */,
-				4F85BE7B1F417A620044C5E8 /* jquery-1.11.3.min.js */,
-				4F85BE7C1F417A620044C5E8 /* jquery.mobile-1.4.5.min.css */,
-				4F85BE7D1F417A620044C5E8 /* jquery.mobile-1.4.5.min.js */,
-				4F85BE7E1F417A620044C5E8 /* jquery.mobile.custom.min.js */,
-				4F85BE7F1F417A620044C5E8 /* jquery.mobile.custom.structure.min.css */,
-				4F85BE801F417A620044C5E8 /* jquery.mobile.custom.theme.min.css */,
-			);
-			path = jquery;
-			sourceTree = "<group>";
-		};
-		4F85BE791F417A620044C5E8 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				4F85BE7A1F417A620044C5E8 /* ajax-loader.gif */,
-			);
-			path = images;
-			sourceTree = "<group>";
-		};
 		4FDFCB021E84B59A00A6C102 = {
 			isa = PBXGroup;
 			children = (
@@ -314,7 +220,7 @@
 		4FDFCB0D1E84B59A00A6C102 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				4F85BE381F4170EC0044C5E8 /* GoogleMap */,
+				4F6C754E1F42834400592836 /* GoogleMap */,
 				4F7DB7261F3FF7C700507498 /* File */,
 				4F7B13ED1F2981D2007836EE /* WaterWaveProgressView */,
 				4F4A4ED11F261F430042CA5F /* ThirdParty */,
@@ -334,6 +240,8 @@
 				4F00D4921F26F75C0027528D /* 1.wav */,
 				4FC395591EA791270027A839 /* LinkLabelImageGenerator.h */,
 				4FC3955A1EA791270027A839 /* LinkLabelImageGenerator.m */,
+				4F6C75501F428D2800592836 /* URLParameterParser.h */,
+				4F6C75511F428D2800592836 /* URLParameterParser.m */,
 				4F0115F31EE3A46F00330302 /* CTCallIVRView.nib */,
 				4F1382EE1E9C687E00112681 /* View.xib */,
 				4FDFCB171E84B59A00A6C102 /* Main.storyboard */,
@@ -419,36 +327,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F85BE8C1F417A620044C5E8 /* vue-swipe.js in Resources */,
-				4F85BE851F417A620044C5E8 /* location_marker.png in Resources */,
 				4FDFCB3B1E84EF3000A6C102 /* icon_22x29.png in Resources */,
-				4F85BE821F417A620044C5E8 /* btn_back.png in Resources */,
 				4FDFCB1E1E84B59A00A6C102 /* LaunchScreen.storyboard in Resources */,
-				4F85BE881F417A620044C5E8 /* map.js in Resources */,
-				4F85BE941F417A620044C5E8 /* jquery.mobile.custom.theme.min.css in Resources */,
 				4FDFCB1B1E84B59A00A6C102 /* Assets.xcassets in Resources */,
-				4F85BE871F417A620044C5E8 /* map.html in Resources */,
 				4F0115F41EE3A46F00330302 /* CTCallIVRView.nib in Resources */,
-				4F85BE841F417A620044C5E8 /* ico_location.png in Resources */,
-				4F85BE8B1F417A620044C5E8 /* vue-swipe.css in Resources */,
+				4F6C754F1F42834400592836 /* GoogleMap in Resources */,
 				4F1382EF1E9C687E00112681 /* View.xib in Resources */,
-				4F85BE8F1F417A620044C5E8 /* jquery-1.11.3.min.js in Resources */,
 				4F00D4931F26F75C0027528D /* 1.wav in Resources */,
 				4FDFCB411E84FB0F00A6C102 /* icon_64x64.png in Resources */,
-				4F85BE891F417A620044C5E8 /* travel.html in Resources */,
-				4F85BE811F417A620044C5E8 /* bg_location_info.png in Resources */,
-				4F85BE931F417A620044C5E8 /* jquery.mobile.custom.structure.min.css in Resources */,
-				4F85BE8E1F417A620044C5E8 /* ajax-loader.gif in Resources */,
 				4FDFCB3F1E84EF3D00A6C102 /* public.image.png in Resources */,
-				4F85BE8D1F417A620044C5E8 /* vue.js in Resources */,
-				4F85BE8A1F417A620044C5E8 /* map.css in Resources */,
-				4F85BE901F417A620044C5E8 /* jquery.mobile-1.4.5.min.css in Resources */,
 				4FDFCB3D1E84EF3700A6C102 /* icon_44x58.png in Resources */,
-				4F85BE861F417A620044C5E8 /* p.png in Resources */,
-				4F85BE911F417A620044C5E8 /* jquery.mobile-1.4.5.min.js in Resources */,
 				4F3AA9481EC16AF5003CFC02 /* ThirdFont.plist in Resources */,
-				4F85BE831F417A620044C5E8 /* btn_submit.png in Resources */,
-				4F85BE921F417A620044C5E8 /* jquery.mobile.custom.min.js in Resources */,
 				4FDFCB191E84B59A00A6C102 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F51FCA71E9B2FBE009808DF /* AFSecurityPolicy.m in Sources */,
+				4F6C75521F428D2800592836 /* URLParameterParser.m in Sources */,
 				4F51FCA91E9B2FBE009808DF /* AFURLResponseSerialization.m in Sources */,
 				4F6565B81F31B2AD00EB6797 /* GoogleMapController.m in Sources */,
 				4FDFCB161E84B59A00A6C102 /* ViewController.m in Sources */,

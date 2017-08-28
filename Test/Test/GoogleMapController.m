@@ -9,10 +9,17 @@
 #import "GoogleMapController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "LocationTransformer.h"
+#import "URLParameterParser.h"
+#import <WebKit/WebKit.h>
+
+#define GoogleMapActionScheme @"vbox"
+#define GoogleMapActionKey    @"action"
+#define GoogleMapActionSubmit @"submit"
+#define GoogleMapActionClose  @"close"
 
 @interface GoogleMapController ()<UIWebViewDelegate>
 
-@property(nonatomic,weak)IBOutlet UIWebView *web;
+@property(nonatomic,weak)UIWebView *web;
 
 @end
 
@@ -21,14 +28,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-    self.web.delegate=self;
     
-    self.web.scrollView.bounces=NO;
+    UIWebView *web=[[UIWebView alloc]init];
     
-    self.web.scrollView.scrollEnabled=NO;
+    self.web=web;
     
-    NSString *htmlPath=[[NSBundle mainBundle] pathForResource:@"map" ofType:@"html"];
+    [self.view addSubview:web];
+  
+    
+    web.delegate=self;
+    
+    web.scrollView.bounces=NO;
+    
+    web.scrollView.scrollEnabled=NO;
+    
+    NSString *htmlPath=[[NSBundle mainBundle] bundlePath];
     
 
     NSURL *url=[NSURL fileURLWithPath:htmlPath];
@@ -37,11 +51,14 @@
     
     location=[LocationTransformer transformLocation:location fromType:LocationTypeBD_09 toType:LocationTypeGCJ_02];
     
-    NSString *para=[NSString stringWithFormat:@"?lat=%f&lon=%f",location.latitude,location.longitude];
+    NSString *para=[NSString stringWithFormat:@"GoogleMap/map.html?lat=%f&lon=%f",location.latitude,location.longitude];
     
-    url=[NSURL URLWithString:para relativeToURL:url];
+    url=[NSURL URLWithString:para relativeToURL:[NSURL fileURLWithPath:htmlPath]];
+
     
-    [self.web loadRequest:[NSURLRequest requestWithURL:url]];
+    [web loadRequest:[NSURLRequest requestWithURL:url]];
+    
+    
     
 }
 
@@ -64,21 +81,50 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    NSLog(@"%@",[self decodeFromPercentEscapeString:request.URL.absoluteString]);
+    
+    NSString *url=[request.URL.absoluteString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    if ([request.URL.scheme isEqualToString:GoogleMapActionScheme])
+    {
+        NSDictionary *parameter=[URLParameterParser parserParametersFromURL:url];
+        
+        [self handleGoogleMapAction:parameter];
+    }
+    
+    
+    
     
     return YES;
 }
 
-- (NSString *)decodeFromPercentEscapeString: (NSString *) input
+- (void)handleGoogleMapAction:(NSDictionary *)parameter
 {
-    NSMutableString *outputStr = [NSMutableString stringWithString:input];
-    [outputStr replaceOccurrencesOfString:@"+"
-                               withString:@""
-                                  options:NSLiteralSearch
-                                    range:NSMakeRange(0,[outputStr length])];
-    return
-    [outputStr stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    if ([[parameter valueForKey:GoogleMapActionKey] isEqualToString:GoogleMapActionSubmit])
+    {
+        NSLog(@"**%@**",[parameter valueForKey:GoogleMapActionKey]);
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    else if ([[parameter valueForKey:GoogleMapActionKey] isEqualToString:GoogleMapActionClose])
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -14,7 +14,7 @@
 #import "lame.h"
 
 #import  <CoreTelephony/CoreTelephonyDefines.h>
-
+#import "GoogleMapController.h"
 
 
 @interface ViewController ()
@@ -33,12 +33,17 @@
 @implementation ViewController
 
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    GoogleMapController *vc=[[GoogleMapController alloc]init];
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)pressButton:(id)sender
